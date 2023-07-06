@@ -1,5 +1,5 @@
-<sl-search-bar></sl-search-bar>
-<div class="conferences-container">
+<sl-search-bar @slideInFromTop></sl-search-bar>
+<div @cards class="conferences-container">
   @for (conference of conferences$ | async; track conference) {
     <sl-card
       [routerLink]="['..', 'conferences', conference.id]"
@@ -7,10 +7,11 @@
     ></sl-card>
   }
 </div>
-<div class="messages-container">
+<div @messages class="messages-container">
   <h2>Messagees from ...</h2>
   @for (message of messages$ | async; track message) {
     <sl-list-item
+      @slideOutLeft
       [routerLink]="['..', 'messages', message.id]"
       [model]="message"
       (close)="deleteMessage($event)"

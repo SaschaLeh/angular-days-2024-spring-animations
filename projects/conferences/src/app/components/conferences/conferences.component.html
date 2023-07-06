@@ -8,6 +8,7 @@
 </div>
 @if (selectedConference$ | async; as selectedConf) {
   <sl-conference-info-drawer
+    @drawerSlideInOut
     [conference]="selectedConf"
     (closed)="selectedConference$.next(undefined)"
     class="drawer"

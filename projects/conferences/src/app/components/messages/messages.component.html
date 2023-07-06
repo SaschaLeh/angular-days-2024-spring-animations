@@ -1,6 +1,7 @@
-<div class="messages">
+<div @messages class="messages">
   @for (message of messages$ | async; track message) {
     <sl-list-item
+      @slideOutRight
       [model]="message"
       (close)="deleteMessage($event)"
     ></sl-list-item>
