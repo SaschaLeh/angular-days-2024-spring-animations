@@ -1,8 +1,10 @@
 <div class="messages">
-  @for (message of messages$ | async; track message) {
+  @for (message of messages$ | async; let i = $index; track message) {
     <sl-list-item
+      [style.--message-index]="i+1"
       [model]="message"
       (close)="deleteMessage($event)"
+    class="message"
     ></sl-list-item>
   }
 </div>
