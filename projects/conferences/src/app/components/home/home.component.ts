@@ -1,6 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, ListItemComponent, SearchBarComponent } from '@sl/components';
+import {
+  CardComponent,
+  ListContainer,
+  ListItem,
+  ListItemComponent,
+  SearchBarComponent,
+} from '@sl/components';
 import { RouterLink } from '@angular/router';
 import { DataService } from '../../data.service';
 
@@ -11,6 +17,7 @@ import { DataService } from '../../data.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [ListContainer, ListItem],
 })
 export class HomeComponent {
   private readonly dataService = inject(DataService);
