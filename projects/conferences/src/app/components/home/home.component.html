@@ -1,19 +1,19 @@
 <sl-search-bar></sl-search-bar>
 <div class="conferences-container">
-  @for (conference of conferences$ | async; track conference) {
-    <sl-card
-      [routerLink]="['..', 'conferences', conference.id]"
-      [model]="conference"
+  @for (conference of conferences$ | async; track conference.id) {
+  <sl-card
+    [routerLink]="['..', 'conferences', conference.id]"
+    [model]="conference" ></sl-card >
     ></sl-card>
   }
 </div>
 <div class="messages-container">
   <h2>Messagees from ...</h2>
-  @for (message of messages$ | async; track message) {
-    <sl-list-item
-      [routerLink]="['..', 'messages', message.id]"
-      [model]="message"
-      (close)="deleteMessage($event)"
-    ></sl-list-item>
+  @for (message of messages$ | async; track message.id) {
+  <sl-list-item
+    [routerLink]="['..', 'messages', message.id]"
+    [model]="message"
+    (close)="deleteMessage($event)"
+  ></sl-list-item >
   }
 </div>

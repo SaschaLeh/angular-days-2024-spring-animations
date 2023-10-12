@@ -1,5 +1,5 @@
 <div class="cards">
-  @for (conference of conferences$ | async; track conference) {
+  @for (conference of conferences$ | async; track conference.id) {
     <sl-card
       [model]="conference"
       (click)="selectedConference$.next(conference)"
